@@ -18,9 +18,10 @@ To write a program to predict the type of species of the Iris flower using the S
 ```
 /*
 Program to implement the prediction of iris species using SGD Classifier.
-Developed by: 
-RegisterNumber:  
+Developed by: Nisha.J
+RegisterNumber:212223040133  
 */
+```
 ```
 import pandas as pd
 from sklearn.datasets import load_iris
@@ -30,37 +31,37 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load the Iris dataset
+#Load the Iris dataset
 iris = load_iris()
 
-# Create a Pandas DataFrame
+#Create a Pandas DataFrame
 df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
 df['target'] = iris.target
 
-# Display the first few rows of the dataset
+#Display the first few rows of the dataset
 print(df.head())
 
-# Split the data into features (X) and target (y)
+#Split the data into features (X) and target (y)
 X = df.drop('target', axis=1)
 y = df['target']
 
-# Split the data into training and testing sets
+#Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Create an SGD classifier with default parameters
+#Create an SGD classifier with default parameters
 sgd_clf = SGDClassifier(max_iter=1000, tol=1e-3)
 
-# Train the classifier on the training data
+#Train the classifier on the training data
 sgd_clf.fit(X_train, y_train)
 
-# Make predictions on the testing data
+#Make predictions on the testing data
 y_pred = sgd_clf.predict(X_test)
 
-# Evaluate the classifier's accuracy
+#Evaluate the classifier's accuracy
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.3f}")
 
-# Calculate the confusion matrix
+#Calculate the confusion matrix
 cm = confusion_matrix(y_test, y_pred)
 print("Confusion Matrix:")
 print(cm)
@@ -68,7 +69,12 @@ print(cm)
 
 
 ## Output:
-![prediction of iris species using SGD Classifier](sam.png)
+![368415363-beeede28-eb80-4088-bb31-30d5294cb85d](https://github.com/user-attachments/assets/02b28051-7024-47ef-b269-29a00296d7bf)
+
+![368415448-a58826f6-d3ab-4e40-ad63-d581bf93527d](https://github.com/user-attachments/assets/568ae8b9-6c6f-480e-8a36-74b8b9b3a3f6)
+
+![368415536-59a53f3f-366a-4259-a79d-3f672048f48f](https://github.com/user-attachments/assets/bdbc6d41-e753-421b-9a79-0571b56f604d)
+
 
 
 ## Result:
